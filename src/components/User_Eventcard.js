@@ -70,7 +70,8 @@ const UserEventsdetail = (props) => {
   };
 
   const handle_delete = () => {
-    const ans = confirm("Are you sure u want to delete this");
+    // const ans = confirm("Are you sure u want to delete this");
+    const ans = true;
     const eventid = props.id;
     if (ans) {
       delete_event(eventid);
@@ -86,6 +87,7 @@ const UserEventsdetail = (props) => {
     document.getElementById(`send_mail_${props.id}`).showModal();
   };
 
+  const readmore = () => { localStorage.setItem("eventid", props.id);  navigate("/readmore");}
   return (
     <div className=" lg:w-fit w-full md:w-1/2  h-fit shadow-sm rounded-lg border m-5 relative">
       <div className="note-card card overflow-hidden bg-base-100 shadow-xl">
@@ -103,11 +105,7 @@ const UserEventsdetail = (props) => {
               <div className="h-fit flex flex-row justify-center overflow-hidden">
                 <h1 className="text-xl font-semibold text-center">
                   <div
-                    onClick={() => {
-                      localStorage.setItem("eventid", props.id),
-                        console.log(props.id),
-                        navigate("/readmore");
-                    }}
+                    onClick={readmore}
                     className="cursor-pointer  hover:text-blue-500"
                   >
                     {props.name} summary{" "}

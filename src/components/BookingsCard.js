@@ -29,6 +29,7 @@ const BookingsCard = (props) => {
     caller();
   }, []);
 
+  const temp = () => { localStorage.setItem("eventid", props.id); navigate("/readmore");};
   return (
     event && (
       <div className="p-2">
@@ -80,11 +81,7 @@ const BookingsCard = (props) => {
                       </span>
                     </div>
                     <div
-                      onClick={(e) => {
-                        localStorage.setItem("eventid", props.id),
-                          console.log(props.id),
-                          navigate("/readmore");
-                      }}
+                      onClick={temp}
                       className={` ${
                         event.reviewed ? "" : "hidden"
                       }     text-blue-600 cursor-pointer`}

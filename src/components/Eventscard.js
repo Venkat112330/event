@@ -65,7 +65,8 @@ const Eventscard = (props) => {
   };
 
   const handle_delete = () => {
-    const ans = confirm("Are you sure u want to delete this");
+    const ans = true;
+    // const ans = confirm("Are you sure u want to delete this");
     const eventid = props.id;
     if (ans) {
       delete_event(eventid);
@@ -82,6 +83,8 @@ const Eventscard = (props) => {
     setloader(false);
     setaccept(true);
   };
+
+  const readmore = (e) => {localStorage.setItem("eventid", props.id) ; navigate("/readmore"); };
 
   return (
     <div className="p-2">
@@ -172,11 +175,7 @@ const Eventscard = (props) => {
                     </span>
                   </div>
                   <div
-                    onClick={(e) => {
-                      localStorage.setItem("eventid", props.id),
-                        console.log(props.id),
-                        navigate("/readmore");
-                    }}
+                    onClick={readmore}
                     className={` ${
                       reviewed ? "" : "hidden"
                     }     text-blue-600 cursor-pointer`}

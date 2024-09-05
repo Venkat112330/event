@@ -294,7 +294,7 @@ const Filters = () => {
               <button
                 className="ml-2  text-gray-500"
                 onClick={() => {
-                  removeFilter("tag"), handlefilters();
+                  removeFilter("tag")
                 }}
               >
                 ✕
@@ -307,7 +307,7 @@ const Filters = () => {
               <button
                 className="ml-2  text-gray-500"
                 onClick={() => {
-                  removeFilter("location"), handlefilters();
+                  removeFilter("location")
                 }}
               >
                 ✕
