@@ -92,7 +92,7 @@ const App = () => {
                 path="/signup"
                 element={<Signup signup={signup} />}
               />
-              <Route exact path="/event" element={<Feed user={user} />} />
+              <Route  path="/event" element={<Feed user={user} />} />
               <Route
                 exact
                 path="/myevents"
