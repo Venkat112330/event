@@ -121,7 +121,7 @@ const Formnote = () => {
                 className="input focus:outline-none bordered input-bordered w-full"
               ></textarea>
 
-              <input
+              <input 
                 name="photo"
                 type="file"
                 onChange={handleFileChange}
